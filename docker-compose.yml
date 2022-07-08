@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    command: bundle exec ruby spec/integration/bench.rb
+    environment:
+      - DD_AGENT_HOST=ddagent
+      - DD_TRACE_SAMPLE_RATE=1.0
+    depends_on:
+      - ddagent
+    volumes:
+      - .:/app
+      - bundle:/app/vendor/bundle
+
+  ddagent:
+    image: gcr.io/datadoghq/agent:latest
+
+    restart: always
+
+    ports:
+      - "8126:8126/tcp"
+
+    environment:
+      - DD_API_KEY
+      - DD_TAGS="service:datadog_thread_tracer"
+      - DD_LOG_LEVEL=WARN
+      - DD_APM_ENABLED=true
+      - DD_APM_NON_LOCAL_TRAFFIC=true
+
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "/proc/:/host/proc/:ro"
+      - "/sys/fs/cgroup/:/host/sys/fs/cgroup:ro"
+
+volumes:
+  bundle:
