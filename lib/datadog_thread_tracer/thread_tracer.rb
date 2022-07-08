@@ -2,7 +2,7 @@
 
 module DatadogThreadTracer
   # trace within threads
-  class Tracer
+  class ThreadTracer
     def initialize
       @threads = []
       @thread_count = 0

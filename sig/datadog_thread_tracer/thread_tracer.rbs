@@ -1,5 +1,5 @@
 module DatadogThreadTracer
-  class Tracer
+  class ThreadTracer
     def initialize: () -> void
 
     def trace: (?string trace_name) { () -> untyped } -> untyped

@@ -13,12 +13,12 @@ RSpec.describe DatadogThreadTracer do
     end
 
     it "trace in thread" do
-      DatadogThreadTracer.trace do |tracer|
-        tracer.trace do
+      DatadogThreadTracer.trace do |thread_tracer|
+        thread_tracer.trace do
           @result1 = 1
         end
 
-        tracer.trace do
+        thread_tracer.trace do
           @result2 = 2
         end
       end
