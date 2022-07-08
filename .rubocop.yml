@@ -9,6 +9,11 @@ AllCops:
 Layout/DotPosition:
   EnforcedStyle: trailing
 
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+    - "*.gemspec"
+
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
