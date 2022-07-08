@@ -17,12 +17,11 @@ module DatadogThreadTracer
       # c.f. https://github.com/DataDog/dd-trace-rb/issues/1460
       tracer = Datadog::Tracing.send(:tracer)
 
-      context = tracer.provider.context
-      @threads << Thread.start(trace_name, context) do |trace_name, context|
+      @threads << Thread.start(trace_name, tracer.provider.context) do |name, context|
         tracer = Datadog::Tracing.send(:tracer)
 
         tracer.provider.context = context
-        Datadog::Tracing.trace(trace_name, &block)
+        Datadog::Tracing.trace(name, &block)
       end
     end
 
