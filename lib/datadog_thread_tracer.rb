@@ -3,20 +3,20 @@
 require "ddtrace"
 
 require_relative "datadog_thread_tracer/version"
-require_relative "datadog_thread_tracer/tracer"
+require_relative "datadog_thread_tracer/thread_tracer"
 
 module DatadogThreadTracer # rubocop:disable Style/Documentation
   class Error < StandardError; end
 
-  # @yield
-  # @yieldparam [DatadogThreadTracer::Tracer] tracer
+  # @yield Processes you want to execute in a thread
+  # @yieldparam [DatadogThreadTracer::ThreadTracer] thread_tracer
   def self.trace
     Datadog::Tracing.trace("DatadogThreadTracer.trace") do
-      tracer = DatadogThreadTracer::Tracer.new
+      thread_tracer = DatadogThreadTracer::ThreadTracer.new
 
-      yield tracer
+      yield thread_tracer
 
-      tracer.join_threads
+      thread_tracer.join_threads
     end
   end
 end

@@ -24,12 +24,12 @@ Or install it yourself as:
 ```ruby
 require "datadog_thread_tracer"
 
-DatadogThreadTracer.trace do |tracer|
-  tracer.trace do
+DatadogThreadTracer.trace do |thread_tracer|
+  thread_tracer.trace do
     # called in thread
   end
 
-  tracer.trace("trace_name") do
+  thread_tracer.trace("trace_name") do
     # called in thread
   end
 end
