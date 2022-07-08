@@ -8,10 +8,13 @@ require_relative "datadog_thread_tracer/thread_tracer"
 module DatadogThreadTracer # rubocop:disable Style/Documentation
   class Error < StandardError; end
 
+  DEFAULT_TRACE_NAME = "DatadogThreadTracer.trace"
+
+  # @param trace_name [String]
   # @yield Processes you want to execute in a thread
   # @yieldparam [DatadogThreadTracer::ThreadTracer] thread_tracer
-  def self.trace
-    Datadog::Tracing.trace("DatadogThreadTracer.trace") do
+  def self.trace(trace_name = DEFAULT_TRACE_NAME)
+    Datadog::Tracing.trace(trace_name) do
       thread_tracer = DatadogThreadTracer::ThreadTracer.new
 
       yield thread_tracer
