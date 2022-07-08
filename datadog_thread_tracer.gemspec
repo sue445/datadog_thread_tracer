@@ -35,6 +35,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "rubocop"
+  spec.add_development_dependency "rubocop_auto_corrector"
+  spec.add_development_dependency "rubocop-performance"
   spec.add_development_dependency "webmock"
 
   # For more information and examples about making a new gem, check out our
