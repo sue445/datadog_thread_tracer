@@ -1,6 +1,21 @@
 # frozen_string_literal: true
 
 require "datadog_thread_tracer"
+require "webmock/rspec"
+
+Datadog.configure do |c|
+  c.service = "datadog_thread_tracer"
+
+  # Suppress all datadog logging
+  c.logger.level = ::Logger::FATAL
+
+  # c.runtime_metrics.enabled = true
+  # c.profiling.enabled = true
+
+  # Tracing settings
+  # c.tracing.analytics.enabled = true
+  # c.tracing.partial_flush.enabled = true
+end
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -11,5 +26,9 @@ RSpec.configure do |config|
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
+  end
+
+  config.define_derived_metadata do |meta|
+    meta[:aggregate_failures] = true
   end
 end
