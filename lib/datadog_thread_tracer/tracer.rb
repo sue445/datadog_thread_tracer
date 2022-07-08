@@ -9,7 +9,7 @@ module DatadogThreadTracer
     end
 
     # @param trace_name [String]
-    # @yield
+    # @yield Processes you want to execute in a thread
     def trace(trace_name = nil, &block)
       @thread_count += 1
       trace_name ||= "thread_#{@thread_count}"
