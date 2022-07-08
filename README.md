@@ -1,8 +1,8 @@
 # DatadogThreadTracer
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/datadog_thread_tracer`. To experiment with that code, run `bin/console` for an interactive prompt.
+[ddtrace](https://github.com/DataDog/dd-trace-rb) helper to collect traces in thread
 
-TODO: Delete this and the text above, and describe your gem
+[![test](https://github.com/sue445/datadog_thread_tracer/actions/workflows/test.yml/badge.svg)](https://github.com/sue445/datadog_thread_tracer/actions/workflows/test.yml)
 
 ## Installation
 
@@ -21,8 +21,19 @@ Or install it yourself as:
     $ gem install datadog_thread_tracer
 
 ## Usage
+```ruby
+require "datadog_thread_tracer"
 
-TODO: Write usage instructions here
+DatadogThreadTracer.trace do |tracer|
+  tracer.trace do
+    # called in thread
+  end
+
+  tracer.trace("trace_name") do
+    # called in thread
+  end
+end
+```
 
 ## Development
 
@@ -32,7 +43,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/datadog_thread_tracer.
+Bug reports and pull requests are welcome on GitHub at https://github.com/sue445/datadog_thread_tracer.
 
 ## License
 
