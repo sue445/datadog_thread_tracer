@@ -4,6 +4,13 @@
 
 [![test](https://github.com/sue445/datadog_thread_tracer/actions/workflows/test.yml/badge.svg)](https://github.com/sue445/datadog_thread_tracer/actions/workflows/test.yml)
 
+## Example
+### Before (without datadog_thread_tracer)
+![before](img/before.png)
+
+### After (with datadog_thread_tracer)
+![after](img/after.png)
+
 ## Installation
 
 Add this line to your application's Gemfile:
