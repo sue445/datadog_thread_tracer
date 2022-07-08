@@ -26,6 +26,7 @@ RSpec.describe DatadogThreadTracer do
       retry_count = 0
       while retry_count < 3
         break if @request_body_spans.count >= 3
+
         sleep 1
       end
 
