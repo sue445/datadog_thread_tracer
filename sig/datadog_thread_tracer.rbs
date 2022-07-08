@@ -5,5 +5,7 @@ module DatadogThreadTracer
   class Error < StandardError
   end
 
-  def self.trace: () { () -> untyped } -> untyped
+  DEFAULT_TRACE_NAME: ::String
+
+  def self.trace: (string trace_name) { (ThreadTracer) -> untyped } -> untyped
 end
