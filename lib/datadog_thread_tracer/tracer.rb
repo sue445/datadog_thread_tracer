@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module DatadogThreadTracer
   class Tracer
     def initialize
