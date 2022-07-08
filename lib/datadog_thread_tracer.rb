@@ -5,7 +5,7 @@ require "ddtrace"
 require_relative "datadog_thread_tracer/version"
 require_relative "datadog_thread_tracer/tracer"
 
-module DatadogThreadTracer
+module DatadogThreadTracer # rubocop:disable Style/Documentation
   class Error < StandardError; end
 
   # @yield

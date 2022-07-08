@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module DatadogThreadTracer
+  # trace within threads
   class Tracer
     def initialize
       @threads = []
