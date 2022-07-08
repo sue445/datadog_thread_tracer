@@ -1,0 +1,9 @@
+module DatadogThreadTracer
+  class Tracer
+    def initialize: () -> void
+
+    def trace: (?string trace_name) { () -> untyped } -> untyped
+
+    def join_threads: () -> untyped
+  end
+end

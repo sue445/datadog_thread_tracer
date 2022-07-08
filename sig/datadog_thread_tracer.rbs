@@ -1,4 +1,9 @@
 module DatadogThreadTracer
   VERSION: String
   # See the writing guide of rbs: https://github.com/ruby/rbs#guides
+
+  class Error < StandardError
+  end
+
+  def self.trace: () { () -> untyped } -> untyped
 end
