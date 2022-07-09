@@ -14,12 +14,12 @@ module DatadogThreadTracer
       @thread_count += 1
       trace_name ||= "thread_#{@thread_count}"
 
-      # c.f. https://github.com/DataDog/dd-trace-rb/issues/1460
       tracer = Datadog::Tracing.send(:tracer)
 
       @threads << Thread.start(trace_name, tracer.provider.context) do |name, context|
         tracer = Datadog::Tracing.send(:tracer)
 
+        # c.f. https://github.com/DataDog/dd-trace-rb/issues/1460
         tracer.provider.context = context
         Datadog::Tracing.trace(name, &block)
       end
