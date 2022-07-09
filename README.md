@@ -33,11 +33,11 @@ require "datadog_thread_tracer"
 
 DatadogThreadTracer.trace do |thread_tracer|
   thread_tracer.trace do
-    # do something (this block is called in thread)
+    # do something. (this block is called in thread)
   end
 
   thread_tracer.trace("trace_name") do
-    # do something (this block is called in thread)
+    # do something. (this block is called in thread)
   end
 end
 ```
