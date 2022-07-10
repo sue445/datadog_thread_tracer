@@ -2,7 +2,7 @@ module DatadogThreadTracer
   class ThreadTracer
     def initialize: () -> void
 
-    def trace: (?trace_name: string, ?thread_args: untyped) { () -> untyped } -> untyped
+    def trace: (?trace_name: string, ?thread_args: untyped) { (*untyped) -> untyped } -> untyped
 
     def join_threads: () -> untyped
   end

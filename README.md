@@ -40,13 +40,13 @@ DatadogThreadTracer.trace do |thread_tracer|
     # do something. (this block is called in thread)
   end
 
-  # Pass single arg to thread
+  # Pass single arg to Thread
   thread_tracer.trace(thread_args: 1) do |a|
     a
     #=> 1
   end
 
-  # Pass multiple args to thread
+  # Pass multiple args to Thread
   thread_tracer.trace(thread_args: [2, 3]) do |a, b|
     a + b
     #=> 5
