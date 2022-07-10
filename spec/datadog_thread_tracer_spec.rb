@@ -12,6 +12,22 @@ RSpec.describe DatadogThreadTracer do
         end
     end
 
+    def expect_all_trace_ids_are_same(spans_count)
+      retry_count = 0
+      while retry_count < 3
+        break if @request_body_spans.count >= spans_count
+
+        sleep 1
+      end
+
+      trace_ids = @request_body_spans.map { |span| span["trace_id"] }
+
+      expect(trace_ids.count).to eq spans_count
+
+      trace_id = trace_ids[0]
+      expect(trace_ids).to all(eq(trace_id))
+    end
+
     context "without thread_args" do
       it "trace in thread" do
         DatadogThreadTracer.trace do |thread_tracer|
@@ -24,22 +40,10 @@ RSpec.describe DatadogThreadTracer do
           end
         end
 
-        retry_count = 0
-        while retry_count < 3
-          break if @request_body_spans.count >= 3
-
-          sleep 1
-        end
-
         expect(@result1).to eq(1)
         expect(@result2).to eq(2)
 
-        trace_ids = @request_body_spans.map { |span| span["trace_id"] }
-
-        expect(trace_ids.count).to eq 3
-
-        trace_id = trace_ids[0]
-        expect(trace_ids).to all(eq(trace_id))
+        expect_all_trace_ids_are_same(3)
       end
     end
 
@@ -55,22 +59,10 @@ RSpec.describe DatadogThreadTracer do
           end
         end
 
-        retry_count = 0
-        while retry_count < 3
-          break if @request_body_spans.count >= 3
-
-          sleep 1
-        end
-
         expect(@result1).to eq(3)
         expect(@result2).to eq(10)
 
-        trace_ids = @request_body_spans.map { |span| span["trace_id"] }
-
-        expect(trace_ids.count).to eq 3
-
-        trace_id = trace_ids[0]
-        expect(trace_ids).to all(eq(trace_id))
+        expect_all_trace_ids_are_same(3)
       end
     end
   end
