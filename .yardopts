@@ -1,6 +1,7 @@
 --markup markdown
 --no-private
 --hide-void-return
+--asset img/
 -
 CHANGELOG.md
 LICENSE.txt
