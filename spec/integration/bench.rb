@@ -15,12 +15,12 @@ start = Time.now
 BENCH_SECONDS = 5
 
 while Time.now < start + BENCH_SECONDS
-  DatadogThreadTracer.trace do |thread_tracer|
-    thread_tracer.trace do
+  DatadogThreadTracer.trace do |t|
+    t.trace do
       1 + 2
     end
 
-    thread_tracer.trace do
+    t.trace do
       2 * 3
     end
   end

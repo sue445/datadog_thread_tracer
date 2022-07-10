@@ -13,23 +13,23 @@ module DatadogThreadTracer
     # @yield Processes you want to execute in a thread
     #
     # @example Pass `trace_name`
-    #   DatadogThreadTracer.trace do |thread_tracer|
-    #     thread_tracer.trace(trace_name: "trace_name") do
+    #   DatadogThreadTracer.trace do |t|
+    #     t.trace(trace_name: "trace_name") do
     #       # do something. (this block is called in thread)
     #     end
     #   end
     #
     # @example Pass single arg to `Thread`
-    #   DatadogThreadTracer.trace do |thread_tracer|
-    #     thread_tracer.trace(thread_args: 1) do |a|
+    #   DatadogThreadTracer.trace do |t|
+    #     t.trace(thread_args: 1) do |a|
     #       a
     #       #=> 1
     #     end
     #   end
     #
     # @example Pass multiple args to `Thread`
-    #   DatadogThreadTracer.trace do |thread_tracer|
-    #     thread_tracer.trace(thread_args: [2, 3]) do |a, b|
+    #   DatadogThreadTracer.trace do |t|
+    #     t.trace(thread_args: [2, 3]) do |a, b|
     #       a + b
     #       #=> 5
     #     end
