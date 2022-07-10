@@ -12,6 +12,7 @@ RSpec.describe DatadogThreadTracer do
         end
     end
 
+    # @param spans_count [Integer]
     def expect_all_trace_ids_are_same(spans_count)
       retry_count = 0
       while retry_count < 3
@@ -30,12 +31,12 @@ RSpec.describe DatadogThreadTracer do
 
     context "without thread_args" do
       it "trace in thread" do
-        DatadogThreadTracer.trace do |thread_tracer|
-          thread_tracer.trace do
+        DatadogThreadTracer.trace do |t|
+          t.trace do
             @result1 = 1
           end
 
-          thread_tracer.trace do
+          t.trace do
             @result2 = 2
           end
         end
@@ -49,12 +50,12 @@ RSpec.describe DatadogThreadTracer do
 
     context "with thread_args" do
       it "trace in thread" do
-        DatadogThreadTracer.trace do |thread_tracer|
-          thread_tracer.trace(thread_args: [1, 2]) do |a, b|
+        DatadogThreadTracer.trace do |t|
+          t.trace(thread_args: [1, 2]) do |a, b|
             @result1 = a + b
           end
 
-          thread_tracer.trace(thread_args: 10) do |a|
+          t.trace(thread_args: 10) do |a|
             @result2 = a
           end
         end

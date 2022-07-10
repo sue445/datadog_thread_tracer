@@ -31,23 +31,23 @@ Or install it yourself as:
 ```ruby
 require "datadog_thread_tracer"
 
-DatadogThreadTracer.trace do |thread_tracer|
-  thread_tracer.trace do
+DatadogThreadTracer.trace do |t|
+  t.trace do
     # do something. (this block is called in thread)
   end
 
-  thread_tracer.trace(trace_name: "trace_name") do
+  t.trace(trace_name: "trace_name") do
     # do something. (this block is called in thread)
   end
 
-  # Pass single arg to thread
-  thread_tracer.trace(thread_args: 1) do |a|
+  # Pass single arg to Thread
+  t.trace(thread_args: 1) do |a|
     a
     #=> 1
   end
 
-  # Pass multiple args to thread
-  thread_tracer.trace(thread_args: [2, 3]) do |a, b|
+  # Pass multiple args to Thread
+  t.trace(thread_args: [2, 3]) do |a, b|
     a + b
     #=> 5
   end
