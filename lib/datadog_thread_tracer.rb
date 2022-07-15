@@ -4,7 +4,6 @@ require "ddtrace"
 
 require_relative "datadog_thread_tracer/version"
 require_relative "datadog_thread_tracer/thread_tracer"
-require "datadog_thread_tracer"
 
 module DatadogThreadTracer # rubocop:disable Style/Documentation
   class Error < StandardError; end
