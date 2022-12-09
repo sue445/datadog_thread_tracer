@@ -7,7 +7,7 @@ Datadog.configure do |c|
 
   c.service = "datadog_thread_tracer"
   c.env = "test"
-  c.logger.level = ::Logger::WARN
+  c.logger.level = Logger::WARN
 end
 
 start = Time.now

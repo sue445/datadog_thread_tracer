@@ -7,7 +7,7 @@ Datadog.configure do |c|
   c.service = "datadog_thread_tracer"
 
   # Suppress all datadog logging
-  c.logger.level = ::Logger::FATAL
+  c.logger.level = Logger::FATAL
 
   # c.runtime_metrics.enabled = true
   # c.profiling.enabled = true
