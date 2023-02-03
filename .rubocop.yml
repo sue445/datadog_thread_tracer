@@ -6,6 +6,9 @@ AllCops:
   SuggestExtensions: false
   TargetRubyVersion: 2.6
 
+Gemspec/DevelopmentDependencies:
+  EnforcedStyle: gemspec
+
 Layout/DotPosition:
   EnforcedStyle: trailing
 
