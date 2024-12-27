@@ -1,5 +1,11 @@
 ## [Unreleased]
-[full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v1.0.0...main)
+[full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v1.0.1...main)
+
+## [1.0.1](https://github.com/sue445/datadog_thread_tracer/releases/tag/v1.0.1) - 2024-12-28
+[full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v1.0.0...v1.0.1)
+
+* Fix description in gemspec
+  * https://github.com/sue445/datadog_thread_tracer/pull/32
 
 ## [1.0.0](https://github.com/sue445/datadog_thread_tracer/releases/tag/v1.0.0) - 2024-12-28
 [full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v0.1.1...v1.0.0)
