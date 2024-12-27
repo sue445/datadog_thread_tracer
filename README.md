@@ -1,6 +1,6 @@
 # DatadogThreadTracer
 
-[ddtrace](https://github.com/DataDog/dd-trace-rb) helper to collect traces in thread
+[datadog](https://github.com/DataDog/dd-trace-rb) helper to collect traces in thread
 
 [![Gem Version](https://badge.fury.io/rb/datadog_thread_tracer.svg)](https://badge.fury.io/rb/datadog_thread_tracer)
 [![test](https://github.com/sue445/datadog_thread_tracer/actions/workflows/test.yml/badge.svg)](https://github.com/sue445/datadog_thread_tracer/actions/workflows/test.yml)

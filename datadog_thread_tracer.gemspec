@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["sue445"]
   spec.email = ["sue445@sue445.net"]
 
-  spec.summary = "ddtrace helper to collect traces in thread"
-  spec.description = "ddtrace helper to collect traces in thread"
+  spec.summary = "datadog helper to collect traces in thread"
+  spec.description = "datadog helper to collect traces in thread"
   spec.homepage = "https://github.com/sue445/datadog_thread_tracer"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
