@@ -1,5 +1,13 @@
 ## [Unreleased]
-[full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v0.1.1...main)
+[full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v1.0.0...main)
+
+## [1.0.0](https://github.com/sue445/datadog_thread_tracer/releases/tag/v1.0.0) - 2024-12-28
+[full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v0.1.1...v1.0.0)
+
+* **[BREAKING CHANGE]** Migrate to datadog gem
+  * https://github.com/sue445/datadog_thread_tracer/pull/31
+* Deploy yard to Pages
+  * https://github.com/sue445/datadog_thread_tracer/pull/13
 
 ## [0.1.1] - 2022-07-15
 [full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v0.1.0...v0.1.1)
