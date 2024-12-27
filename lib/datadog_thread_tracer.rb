@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "ddtrace"
+require "datadog"
 
 require_relative "datadog_thread_tracer/version"
 require_relative "datadog_thread_tracer/thread_tracer"
