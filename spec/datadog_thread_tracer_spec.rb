@@ -10,6 +10,9 @@ RSpec.describe DatadogThreadTracer do
           @request_body_spans += plain_request_body.flatten
           @request_headers = request.headers
         end
+
+      stub_request(:get, "http://127.0.0.1:8126/info").
+        to_return(status: 200, body: "", headers: {})
     end
 
     # @param spans_count [Integer]
