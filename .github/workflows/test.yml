@@ -44,6 +44,8 @@ jobs:
           bundle update --jobs $(nproc) --retry 3
 
       - run: bundle exec rspec
+        timeout-minutes: 5
+
       - run: bundle exec rubocop
 
       - name: Slack Notification (not success)
