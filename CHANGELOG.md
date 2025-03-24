@@ -1,5 +1,11 @@
 ## [Unreleased]
-[full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v1.0.1...main)
+[full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v2.0.0...main)
+
+## [2.0.0](https://github.com/sue445/datadog_thread_tracer/releases/tag/v2.0.0) - 2025-03-24
+[full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v1.0.1...v2.0.0)
+
+* :bomb: **[BREAKING CHANGE]** Requires Ruby 2.7+
+  * https://github.com/sue445/datadog_thread_tracer/pull/36
 
 ## [1.0.1](https://github.com/sue445/datadog_thread_tracer/releases/tag/v1.0.1) - 2024-12-28
 [full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v1.0.0...v1.0.1)
