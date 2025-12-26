@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "datadog"
 
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "rdoc"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "rubocop", ">= 1.72"
   spec.add_development_dependency "rubocop_auto_corrector"
