@@ -1,5 +1,11 @@
 ## [Unreleased]
-[full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v2.0.1...main)
+[full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v2.0.2...main)
+
+## [2.0.2](https://github.com/sue445/datadog_thread_tracer/releases/tag/v2.0.2) - 2026-08-23
+[full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v2.0.1...v2.0.2)
+
+* Migrate release_gem workflow to sue445/workflows (Also testing the gem release)
+  * https://github.com/sue445/datadog_thread_tracer/pull/77
 
 ## [2.0.1](https://github.com/sue445/datadog_thread_tracer/releases/tag/v2.0.1) - 2025-11-29
 [full changelog](http://github.com/sue445/datadog_thread_tracer/compare/v2.0.0...v2.0.1)
