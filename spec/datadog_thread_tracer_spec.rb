@@ -17,8 +17,7 @@ RSpec.describe DatadogThreadTracer do
 
     # @param spans_count [Integer]
     def expect_all_trace_ids_are_same(spans_count)
-      retry_count = 0
-      while retry_count < 3
+      3.times do
         break if @request_body_spans.count >= spans_count
 
         sleep 1
