@@ -6,6 +6,9 @@ require "webmock/rspec"
 Datadog.configure do |c|
   c.service = "datadog_thread_tracer"
 
+  # Ruby 4.0 defaults to native transport, which bypasses WebMock's HTTP stubs.
+  c.tracing.native_transport = false if c.tracing.respond_to?(:native_transport=)
+
   # Suppress all datadog logging
   c.logger.level = Logger::FATAL
 
